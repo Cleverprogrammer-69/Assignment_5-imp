@@ -209,9 +209,51 @@ const formatingNames = (names) => {
         return names[0];
     }
     else {
-        const allButLastTwo = names.slice(0, -2).join(", ");
+        const to2ndLast = names.slice(0, -2).join(", ");
         const lastTwo = names.slice(-2).join(" and ");
-        return `${allButLastTwo}, ${lastTwo}`;
+        return `${to2ndLast}, ${lastTwo}`;
     }
 };
 console.log(formatingNames(['Abdullah', "hammad", "Noor", "John", "muneeb"]));
+//q28
+const toCelsius = (temps) => {
+    let celsius = [];
+    for (let i = 0; i < temps.length; i++) {
+        celsius.push((temps[i] - 32) * 5 / 9);
+    }
+    return celsius;
+};
+console.log(toCelsius([32, 65, 100]));
+//q29
+const minMaxAverage = (numbers) => {
+    let infoOfNumbers = {
+        min: numbers[0],
+        max: numbers[0],
+        average: 0
+    };
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < infoOfNumbers.min)
+            infoOfNumbers.min = numbers[i];
+        if (numbers[i] > infoOfNumbers.max)
+            infoOfNumbers.max = numbers[i];
+        infoOfNumbers.average = infoOfNumbers.average + numbers[i];
+    }
+    infoOfNumbers.average = infoOfNumbers.average / numbers.length;
+    return infoOfNumbers;
+};
+console.log(minMaxAverage([2, 3, 52, 45234, 123, 1241, -23221]));
+//q30
+const swapElements = (arr, index1, index2) => {
+    if (index1 < 0 ||
+        index1 >= arr.length ||
+        index2 < 0 ||
+        index2 >= arr.length) {
+        throw new Error("Indices are out of range");
+    }
+    const newArray = [...arr];
+    const temp = newArray[index1];
+    newArray[index1] = newArray[index2];
+    newArray[index2] = temp;
+    return newArray;
+};
+console.log(swapElements([2, 3, 52, 53, 23], 3, 4));
