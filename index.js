@@ -257,3 +257,49 @@ const swapElements = (arr, index1, index2) => {
     return newArray;
 };
 console.log(swapElements([2, 3, 52, 53, 23], 3, 4));
+//q31
+const characterCount = (string, c) => {
+    let count = 0;
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === c)
+            count++;
+    }
+    return count;
+};
+console.log(characterCount("abdullah", "a"));
+//q32
+const Todo = [
+    {
+        id: 1,
+        taskName: "Grocery",
+        completed: true,
+    },
+    {
+        id: 2,
+        taskName: "Reading",
+        completed: false,
+    },
+    {
+        id: 3,
+        taskName: "Coding",
+        completed: true,
+    },
+    {
+        id: 4,
+        taskName: "Maintaining codebase",
+        completed: false,
+    },
+];
+const todoFilter = (Todo) => {
+    let filteredTodo = [];
+    for (let i = 0; i < Todo.length; i++) {
+        if (!Todo[i].completed)
+            filteredTodo.push(Todo[i]);
+    }
+    return filteredTodo;
+};
+console.log(todoFilter(Todo));
+//q33
+console.log(smallInteger([2, 3, 1, 41, 1, 3]));
+//q34
+console.log(reversedArray([34, 23, 632, 12]));
